@@ -1,0 +1,48 @@
+html {
+  font-size: 16pt;
+}
+
+@media screen and (max-width: 1680px) {
+
+  html {
+    font-size: 12pt;
+  }
+
+}
+
+@media screen and (max-width: 736px) {
+
+  html {
+    font-size: 11pt;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+
+  html {
+    font-size: 10pt;
+  }
+
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+@font-face {
+  font-family: 'arcade';
+  src: url('assets/fonts/arcadealternate-webfont.woff') format('woff'), /* Modern Browsers */
+       url('assets/fonts/arcadealternate-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+.header{
+  width: 100%;
+  background-color: black;
+  padding-top: 0;
+  color: white;
+  text-align: center;
+  font-family: arcade;
+}
