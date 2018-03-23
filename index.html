@@ -10,16 +10,260 @@
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
   </head>
   <body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+       $(function() {
+           $('#about_link').click(function() {
+               showAbout();
+               return false;
+           });
+       });
+       $(function(){
+         $('#menu_link').click(function(){
+           showMenu();
+           return false;
+         })
+       })
+       $(function(){
+         $('#directions_return').click(function(){
+           showMenu();
+           return false;
+         })
+       })
+       $(function(){
+         $('#bring_return').click(function(){
+           showMenu();
+           return false;
+         })
+       })
+       $(function(){
+         $('#signup_return').click(function(){
+           showMenu();
+           return false;
+         })
+       })
+       $(function(){
+         $('#directions_link').click(function(){
+           showDirections();
+           return false;
+         })
+       })
+       $(function(){
+         $('#bring_link').click(function(){
+           showWhatToBring();
+           return false;
+         })
+       })
+       $(function(){
+         $('#volunteer_link').click(function(){
+           showSignUp();
+           return false;
+         })
+       })
+     </script>
+
+     <script type="text/javascript">
+       function showMenu(){
+         $('#about').hide();
+         $('#directions').hide();
+         $('#whattobring').hide();
+         $('#signup').hide();
+         $('#menu').show();
+         $('#menuselection').html('');
+         menuinput.focus();
+       }
+       function showAbout(){
+         $('#about').show();
+         $('#menu').hide();
+         $('#aboutselection').html('');
+         aboutinput.focus();
+       }
+       function showDirections(){
+         $('#directions').show();
+         $('#menu').hide();
+         $('#directionsinput').focus();
+       }
+       function showWhatToBring(){
+         $('#whattobring').show();
+         $('#menu').hide();
+         $('#whattobringinput').focus();
+       }
+       function showSignUp(){
+         $('#signup').show();
+         $('#menu').hide();
+         $('#signupinput').focus();
+       }
+       //setup keypress stuff
+       // document.addEventListener('keypress', (event) => {
+       //   const keyName = event.key;
+       // })
+       window.onload = function(){
+         var menuinput = document.getElementById('menuinput');
+         var aboutinput = document.getElementById('aboutinput');
+         var directionsinput = document.getElementById('directionsinput')
+         var whattobringinput = document.getElementById('whattobringinput')
+         var signupinput = document.getElementById('signupinput')
+         menuinput.addEventListener('keypress', function(e){
+           if (e.key == "Enter"){
+              switch($('#menuselection').html()){
+                case '1':
+                  showAbout();
+                  break;
+                case '2':
+                  window.location.replace("https://magstock8.uber.magfest.org/uber/preregistration/form");
+                  break;
+                case '3':
+                  showDirections();
+                  break;
+                case '4':
+                  showWhatToBring();
+                  break;
+                case '5':
+                  showSignUp();
+                  break;
+                default:
+                  $('menuselection').html('')
+              }
+           }else {
+             $('#menuselection').html(e.key);
+           }
+         });
+         aboutinput.addEventListener('keypress', function(e){
+           if (e.key == "Enter"){
+             switch($('#aboutselection').html()){
+               case '1':
+               case '2':
+               case '3':
+                 showMenu();
+                 break;
+               default:
+                 $('aboutselection').html('');
+             }
+           }else {
+             $('#aboutselection').html(e.key);
+           }
+         });
+         directionsinput.addEventListener('keypress', function(e){
+           if (e.key == ' '){
+             showMenu();
+           }
+         });
+         whattobringinput.addEventListener('keypress',function(e){
+           if(e.key== ' '){
+             showMenu();
+           }
+         });
+         signupinput.addEventListener('keypress',function(e){
+           if (e.key == ' '){
+             showMenu();
+           }
+         })
+         menuinput.focus();
+       }
+
+
+     </script>
 
     <div class="header">
-      <h1>MAGStock 8</h1>
+      <h1>MAGStock Eight</h1>
+      <img src="images/vignette_top.gif" style="width: 80%;"/>
     </div>
+
+    <div class="menu" id="menu">
+      <p>
+        You may:
+        <ol>
+          <li><a href="#about" id="about_link">Learn about MAGStock</a></li>
+          <li><a href="https://magstock8.uber.magfest.org/uber/preregistration/form">Purchase tickets</a></li>
+          <li><a href="#directions" id="directions_link">Get directions</a></li>
+          <li><a href="#what_to_bring" id="bring_link">Learn what to bring</a></li>
+          <li><a href="#volunteer" id="volunteer_link">Sign up to volunteer</a></li>
+        </ol>
+        What is your choice?
+        <input id="menuinput"/><span id="menuselection"></span><span class="blinking-cursor">_</span>
+      </p>
+    </div>
+
+    <div id="about">
+      <img src="images/magstock8.jpg"/>
+      <p>MAGStock is a 4-day outdoor festival celebrating camping, video games, and video game music.</p>
+      <div class="innermenu">
+          You may:
+        <ol>
+          <li><a href="#events" id="events_link">Learn about events</a></li>
+          <li><a href="#music" id="music_link">Learn about music</a></li>
+          <li><a href="#menu" id="menu_link">Return to the main menu</a></li>
+        </ol>
+        What is your choice?<input id="aboutinput"/><span id="aboutselection"></span><span class="blinking-cursor">_</span>
+      </div>
+    </div>
+
+    <div id="directions">
+      <p class="subtitle">Where To Go</p>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6286.1698997159065!2d-78.086888!3d38.021799!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x43132b18d58335d6!2sSmall+Country+Campground!5e0!3m2!1sen!2sus!4v1511492561590"
+        width="600" height="450" frameborder="0" style="border:0"
+        allowfullscreen>
+      </iframe>
+      <input id="directionsinput"/>
+      <div id="return">Press 'space' or click <a href="#menu" id="directions_return">here</a> to return to the main menu</div>
+    </div>
+
+    <div id="whattobring">
+      <p class="subtitle">What To Bring</p>
+      <div class="innermenu">
+        Camping Essentials
+        <ul>
+          <li>A tent with enough room for everyone, or friends you trust with tents</li>
+          <li>Sleeping bag or something to keep you warm at night</li>
+          <li>Folding tables, chairs</li>
+          <li>light-duty rope, twine</li>
+          <li>Cooler</li>
+          <li>Food and drink <i>there are nearby stores, but you will be cooking stuff, or eating cold food</i></li>
+          <li>Trash bags</li>
+          <li>Bug spray / bug repellant</li>
+          <li>Flashlights or lantern</li>
+          <li>Extra batteries</li>
+          <li>Clothes</li>
+          <li>Swimsuit</li>
+          <li>A towel</li>
+          <li>Extension cords</li>
+          <li>FM radio so you can listen to main events and concerts</li>
+          <li>Sunscreen</li>
+        </ul>
+        Extra stuff
+        <ul>
+          <li>Portables (Switch, Zune, <a href="https://hackaday.com/2018/03/14/teardown-the-oregon-trail-handheld/">Oregon Trail</a>, etc...)</li>
+          <li>Cell Phone</li>
+          <li>Camera</li>
+          <li>Extra money for goodies, pizza, emergencies, etc...</li>
+          <li>Plastic bins for washing dishes</li>
+          <li>Grill</li>
+          <li>Canopy</li>
+          <li>Consoles/Other Electronics <i>At your own risk</i></li>
+        </ul>
+      </div>
+      <input id="whattobringinput"/>
+      <div id="return">Press 'space' or click <a href="#menu" id="bring_return">here</a> to return to the main menu</div>
+    </div>
+
+    <div id="signup">
+      <p class="subtitle">Volunteer</p>
+      <p> Volunteeering for MAGStock is easy! Our events are built on volunteer participation, so we encourage every attendee to get involved.</p>
+      <p> Between prepping food or checking in attendees, there's something for everyone! We don't ask a lot, just signing up for one three hour shfit makes a world of difference to us. Volunteer for enough hours and you'll even be rewarded!</p>
+      <p> Volunteers are required to purchase admission to the event, but once done, you're off to the races! Make sure to check 'Sign me up!' when registering so we know you're interested. If you have any questions about, feel free to contact <a href="mailto:magstock@magfest.org?Subject=I%20would%20like%20to%20volunteer%20for%20MAGStock" target="#">magstock@magstock.org</a>.</p>
+      <input id="signupinput"/>
+      <div id="return">Press 'space' or click <a href="#menu" id="signup_return">here</a> to return to the main menu</div>
+    </div>
+
+    <div class="footer">
+      <img src="images/vignette.gif" style="width:80%;"/>
+    </div>
+
+    <div id="bg"></div>
   </body>
 </html>
