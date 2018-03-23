@@ -63,15 +63,24 @@
            return false;
          })
        })
+       $(function(){
+         $('#landing_link').click(function(){
+           showMenu();
+           return false;
+         })
+       })
      </script>
 
      <script type="text/javascript">
        function showMenu(){
+         $('#landing_page').fadeOut(750);
          $('#about').hide();
          $('#directions').hide();
          $('#whattobring').hide();
          $('#signup').hide();
          $('#menu').show();
+         $('#header_box').show();
+         $('#footer_box').show();
          $('#menuselection').html('');
          menuinput.focus();
        }
@@ -106,6 +115,7 @@
          var directionsinput = document.getElementById('directionsinput')
          var whattobringinput = document.getElementById('whattobringinput')
          var signupinput = document.getElementById('signupinput')
+         var landinginput = document.getElementById('landinginput')
          menuinput.addEventListener('keypress', function(e){
            if (e.key == "Enter"){
               switch($('#menuselection').html()){
@@ -161,13 +171,24 @@
              showMenu();
            }
          })
-         menuinput.focus();
+         landinginput.addEventListener('keypress',function(e){
+           if(e.key == ' ' || e.key == 'Enter'){
+             showMenu();
+           }
+         })
+         landinginput.focus();
        }
 
 
      </script>
 
-    <div class="header">
+    <div class="landing" id="landing_page">
+      <img src="images/magstock8.jpg">
+      <p>Press 'enter' or click <a href="#menu" id="landing_link">here</a> to continue.</p>
+      <input id="landinginput"/>
+    </div>
+
+    <div class="header" id="header_box">
       <h1>MAGStock Eight</h1>
       <img src="images/vignette_top.gif" style="width: 80%;"/>
     </div>
@@ -260,7 +281,7 @@
       <div id="return">Press 'space' or click <a href="#menu" id="signup_return">here</a> to return to the main menu</div>
     </div>
 
-    <div class="footer">
+    <div class="footer" id="footer_box">
       <img src="images/vignette.gif" style="width:80%;"/>
     </div>
 

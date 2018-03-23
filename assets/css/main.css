@@ -77,6 +77,7 @@ body {
   background-color: black;
   text-align: center;
   padding-bottom: 25px;
+  display:none;
 }
 .header h1{
   padding-top: 0;
@@ -89,6 +90,20 @@ input{
   opacity: 0;
 }
 
+.landing{
+  width:100%;
+  height:100%;
+  background-color:black;
+  color: white;
+  text-align:center;
+  position: fixed;
+}
+.landing img{
+  padding-top: 5%;
+  max-width: 70%;
+  max-height: 70%;
+}
+
 .menu {
   padding-left: 15%;
   background-color: black;
@@ -96,6 +111,7 @@ input{
   font-size: 2vw;
   padding-bottom: 0;
   height: 100%;
+  display:none;
 }
 .menu li{
   padding-left: 15px;
@@ -116,6 +132,7 @@ input{
   background-color: black;
   text-align: center;
   padding-top: 25px;
+  display:none;
 }
 
 #menu{
