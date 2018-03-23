@@ -10,6 +10,8 @@
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -41,6 +43,18 @@
        })
        $(function(){
          $('#signup_return').click(function(){
+           showMenu();
+           return false;
+         })
+       })
+       $(function(){
+         $('#events_return').click(function(){
+           showMenu();
+           return false;
+         })
+       })
+       $(function(){
+         $('#music_return').click(function(){
            showMenu();
            return false;
          })
@@ -81,6 +95,8 @@
          $('#menu').show();
          $('#header_box').show();
          $('#footer_box').show();
+         $('#events').hide();
+         $('#music').hide();
          $('#menuselection').html('');
          menuinput.focus();
        }
@@ -116,6 +132,8 @@
          var whattobringinput = document.getElementById('whattobringinput')
          var signupinput = document.getElementById('signupinput')
          var landinginput = document.getElementById('landinginput')
+         var musicinput = document.getElementById('musicinput')
+         var eventsinput = document.getElementById('eventsinput')
          menuinput.addEventListener('keypress', function(e){
            if (e.key == "Enter"){
               switch($('#menuselection').html()){
@@ -145,7 +163,15 @@
            if (e.key == "Enter"){
              switch($('#aboutselection').html()){
                case '1':
+                 $('#about').hide();
+                 $('#events').show();
+                 eventsinput.focus();
+                 break;
                case '2':
+                 $('#about').hide();
+                 $('#music').show();
+                 musicinput.focus();
+                 break;
                case '3':
                  showMenu();
                  break;
@@ -167,6 +193,16 @@
            }
          });
          signupinput.addEventListener('keypress',function(e){
+           if (e.key == ' '){
+             showMenu();
+           }
+         })
+         musicinput.addEventListener('keypress',function(e){
+           if (e.key == ' '){
+             showMenu();
+           }
+         })
+         eventsinput.addEventListener('keypress',function(e){
            if (e.key == ' '){
              showMenu();
            }
@@ -209,7 +245,7 @@
     </div>
 
     <div id="about">
-      <img src="images/magstock8.jpg"/>
+      <!-- <img src="images/magstock8.jpg"/> -->
       <p>MAGStock is a 4-day outdoor festival celebrating camping, video games, and video game music.</p>
       <div class="innermenu">
           You may:
@@ -220,6 +256,32 @@
         </ol>
         What is your choice?<input id="aboutinput"/><span id="aboutselection"></span><span class="blinking-cursor">_</span>
       </div>
+    </div>
+
+    <div id="music">
+      <p class="subtitle">Music</p>
+      <div class="innermenu container">
+        <p>What are the names of the bands playing at magstock?</p>
+        <ol>
+          <li>Brentalfloss</li>
+          <li>TBD</li>
+          <li>TBD</li>
+        </ol>
+      </div>
+      <input id="musicinput"/>
+      <div id="return">Press 'space' or click <a href="#menu" id="music_return">here</a> to return to the main menu</div>
+    </div>
+
+    <div id="events">
+      <p class="subtitle">Events</p>
+
+      <div class="err container">
+        <img src="images/oxen.png">
+        <p>No events yet! Come back soon.</p>
+      </div>
+      <input id="eventsinput"/>
+      <div id="return">Press 'space' or click <a href="#menu" id="events_return">here</a> to return to the main menu</div>
+
     </div>
 
     <div id="directions">
@@ -273,16 +335,26 @@
     </div>
 
     <div id="signup">
-      <p class="subtitle">Volunteer</p>
-      <p> Volunteeering for MAGStock is easy! Our events are built on volunteer participation, so we encourage every attendee to get involved.</p>
-      <p> Between prepping food or checking in attendees, there's something for everyone! We don't ask a lot, just signing up for one three hour shfit makes a world of difference to us. Volunteer for enough hours and you'll even be rewarded!</p>
-      <p> Volunteers are required to purchase admission to the event, but once done, you're off to the races! Make sure to check 'Sign me up!' when registering so we know you're interested. If you have any questions about, feel free to contact <a href="mailto:magstock@magfest.org?Subject=I%20would%20like%20to%20volunteer%20for%20MAGStock" target="#">magstock@magstock.org</a>.</p>
-      <input id="signupinput"/>
+      <div class="container">
+        <p class="subtitle">Volunteer</p>
+        <p> Volunteeering for MAGStock is easy! Our events are built on volunteer participation, so we encourage every attendee to get involved.</p>
+        <p> Between prepping food or checking in attendees, there's something for everyone! We don't ask a lot, just signing up for one three hour shfit makes a world of difference to us. Volunteer for enough hours and you'll even be rewarded!</p>
+        <p> Volunteers are required to purchase admission to the event, but once done, you're off to the races! Make sure to check 'Sign me up!' when registering so we know you're interested. If you have any questions about, feel free to contact <a href="mailto:magstock@magfest.org?Subject=I%20would%20like%20to%20volunteer%20for%20MAGStock" target="#">magstock@magstock.org</a>.</p>
+        <input id="signupinput"/>
+      </div>
       <div id="return">Press 'space' or click <a href="#menu" id="signup_return">here</a> to return to the main menu</div>
     </div>
 
     <div class="footer" id="footer_box">
       <img src="images/vignette.gif" style="width:80%;"/>
+      <p>© 2002-2018 MAGFest Inc.</p>
+      <p>
+        <a href="https://www.facebook.com/events/729104890621064/" class="social-media secondary-color-text text-accent-2" target="_blank"><i class="fa-lg social-media-icon fa fa-facebook secondary-color " aria-hidden="true"></i></a>
+        <a href="https://twitter.com/magfest" class="social-media secondary-color-text text-accent-2" target="_blank"><i class="fa-lg social-media-icon fa fa-twitter secondary-color " aria-hidden="true"></i></a>
+        <a href="https://reddit.com/r/magfest" class="social-media secondary-color-text text-accent-2" target="_blank"><i class="fa-lg social-media-icon fa fa-reddit secondary-color " aria-hidden="true"></i></a>
+        <a href="https://youtube.com/magfest" class="social-media secondary-color-text text-accent-2" target="_blank"><i class="fa-lg social-media-icon fa fa-youtube secondary-color " aria-hidden="true"></i></a>
+        <a href="http://smile.amazon.com/ch/46-1086258" class="social-media secondary-color-text text-accent-2" target="_blank"><i class="fa-lg social-media-icon fa fa-amazon secondary-color " aria-hidden="true"></i></a>
+      </p>
     </div>
 
     <div id="bg"></div>
