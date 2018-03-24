@@ -12,216 +12,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript">
-       $(function() {
-           $('#about_link').click(function() {
-               showAbout();
-               return false;
-           });
-       });
-       $(function(){
-         $('#menu_link').click(function(){
-           showMenu();
-           return false;
-         })
-       })
-       $(function(){
-         $('#directions_return').click(function(){
-           showMenu();
-           return false;
-         })
-       })
-       $(function(){
-         $('#bring_return').click(function(){
-           showMenu();
-           return false;
-         })
-       })
-       $(function(){
-         $('#signup_return').click(function(){
-           showMenu();
-           return false;
-         })
-       })
-       $(function(){
-         $('#events_return').click(function(){
-           showMenu();
-           return false;
-         })
-       })
-       $(function(){
-         $('#music_return').click(function(){
-           showMenu();
-           return false;
-         })
-       })
-       $(function(){
-         $('#directions_link').click(function(){
-           showDirections();
-           return false;
-         })
-       })
-       $(function(){
-         $('#bring_link').click(function(){
-           showWhatToBring();
-           return false;
-         })
-       })
-       $(function(){
-         $('#volunteer_link').click(function(){
-           showSignUp();
-           return false;
-         })
-       })
-       $(function(){
-         $('#landing_link').click(function(){
-           showMenu();
-           return false;
-         })
-       })
-     </script>
-
-     <script type="text/javascript">
-       function showMenu(){
-         $('#landing_page').fadeOut(750);
-         $('#about').hide();
-         $('#directions').hide();
-         $('#whattobring').hide();
-         $('#signup').hide();
-         $('#menu').show();
-         $('#header_box').show();
-         $('#footer_box').show();
-         $('#events').hide();
-         $('#music').hide();
-         $('#menuselection').html('');
-         menuinput.focus();
-       }
-       function showAbout(){
-         $('#about').show();
-         $('#menu').hide();
-         $('#aboutselection').html('');
-         aboutinput.focus();
-       }
-       function showDirections(){
-         $('#directions').show();
-         $('#menu').hide();
-         $('#directionsinput').focus();
-       }
-       function showWhatToBring(){
-         $('#whattobring').show();
-         $('#menu').hide();
-         $('#whattobringinput').focus();
-       }
-       function showSignUp(){
-         $('#signup').show();
-         $('#menu').hide();
-         $('#signupinput').focus();
-       }
-       //setup keypress stuff
-       // document.addEventListener('keypress', (event) => {
-       //   const keyName = event.key;
-       // })
-       window.onload = function(){
-         var menuinput = document.getElementById('menuinput');
-         var aboutinput = document.getElementById('aboutinput');
-         var directionsinput = document.getElementById('directionsinput')
-         var whattobringinput = document.getElementById('whattobringinput')
-         var signupinput = document.getElementById('signupinput')
-         var landinginput = document.getElementById('landinginput')
-         var musicinput = document.getElementById('musicinput')
-         var eventsinput = document.getElementById('eventsinput')
-         menuinput.addEventListener('keypress', function(e){
-           if (e.key == "Enter"){
-              switch($('#menuselection').html()){
-                case '1':
-                  showAbout();
-                  break;
-                case '2':
-                  window.location.replace("https://magstock8.uber.magfest.org/uber/preregistration/form");
-                  break;
-                case '3':
-                  showDirections();
-                  break;
-                case '4':
-                  showWhatToBring();
-                  break;
-                case '5':
-                  showSignUp();
-                  break;
-                default:
-                  $('menuselection').html('')
-              }
-           }else {
-             $('#menuselection').html(e.key);
-           }
-         });
-         aboutinput.addEventListener('keypress', function(e){
-           if (e.key == "Enter"){
-             switch($('#aboutselection').html()){
-               case '1':
-                 $('#about').hide();
-                 $('#events').show();
-                 eventsinput.focus();
-                 break;
-               case '2':
-                 $('#about').hide();
-                 $('#music').show();
-                 musicinput.focus();
-                 break;
-               case '3':
-                 showMenu();
-                 break;
-               default:
-                 $('aboutselection').html('');
-             }
-           }else {
-             $('#aboutselection').html(e.key);
-           }
-         });
-         directionsinput.addEventListener('keypress', function(e){
-           if (e.key == ' '){
-             showMenu();
-           }
-         });
-         whattobringinput.addEventListener('keypress',function(e){
-           if(e.key== ' '){
-             showMenu();
-           }
-         });
-         signupinput.addEventListener('keypress',function(e){
-           if (e.key == ' '){
-             showMenu();
-           }
-         })
-         musicinput.addEventListener('keypress',function(e){
-           if (e.key == ' '){
-             showMenu();
-           }
-         })
-         eventsinput.addEventListener('keypress',function(e){
-           if (e.key == ' '){
-             showMenu();
-           }
-         })
-         landinginput.addEventListener('keypress',function(e){
-           if(e.key == ' ' || e.key == 'Enter'){
-             showMenu();
-           }
-         })
-         landinginput.focus();
-       }
-
-
-     </script>
+    <script src="assets/js/main.js"></script>
+  </head>
+  <body id="body_div">
 
     <div class="landing" id="landing_page">
       <img src="images/magstock8.jpg">
       <p>Press 'enter' or click <a href="#menu" id="landing_link">here</a> to continue.</p>
-      <input id="landinginput"/>
     </div>
 
     <div class="header" id="header_box">
@@ -240,7 +39,7 @@
           <li><a href="#volunteer" id="volunteer_link">Sign up to volunteer</a></li>
         </ol>
         What is your choice?
-        <input id="menuinput"/><span id="menuselection"></span><span class="blinking-cursor">_</span>
+        <span id="menuselection"></span><span class="blinking-cursor">_</span>
       </p>
     </div>
 
@@ -254,7 +53,8 @@
           <li><a href="#music" id="music_link">Learn about music</a></li>
           <li><a href="#menu" id="menu_link">Return to the main menu</a></li>
         </ol>
-        What is your choice?<input id="aboutinput"/><span id="aboutselection"></span><span class="blinking-cursor">_</span>
+        What is your choice?
+        <span id="aboutselection"></span><span class="blinking-cursor">_</span>
       </div>
     </div>
 
@@ -264,11 +64,12 @@
         <p>What are the names of the bands playing at magstock?</p>
         <ol>
           <li>Brentalfloss</li>
-          <li>TBD</li>
-          <li>TBD</li>
+          <li><span class="blinking-cursor">_</span></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ol>
       </div>
-      <input id="musicinput"/>
       <div id="return">Press 'space' or click <a href="#menu" id="music_return">here</a> to return to the main menu</div>
     </div>
 
@@ -279,7 +80,6 @@
         <img src="images/oxen.png">
         <p>No events yet! Come back soon.</p>
       </div>
-      <input id="eventsinput"/>
       <div id="return">Press 'space' or click <a href="#menu" id="events_return">here</a> to return to the main menu</div>
 
     </div>
@@ -292,7 +92,6 @@
         width="600" height="450" frameborder="0" style="border:0"
         allowfullscreen>
       </iframe>
-      <input id="directionsinput"/>
       <div id="return">Press 'space' or click <a href="#menu" id="directions_return">here</a> to return to the main menu</div>
     </div>
 
@@ -330,7 +129,6 @@
           <li>Consoles/Other Electronics <i>At your own risk</i></li>
         </ul>
       </div>
-      <input id="whattobringinput"/>
       <div id="return">Press 'space' or click <a href="#menu" id="bring_return">here</a> to return to the main menu</div>
     </div>
 
@@ -340,7 +138,6 @@
         <p> Volunteeering for MAGStock is easy! Our events are built on volunteer participation, so we encourage every attendee to get involved.</p>
         <p> Between prepping food or checking in attendees, there's something for everyone! We don't ask a lot, just signing up for one three hour shfit makes a world of difference to us. Volunteer for enough hours and you'll even be rewarded!</p>
         <p> Volunteers are required to purchase admission to the event, but once done, you're off to the races! Make sure to check 'Sign me up!' when registering so we know you're interested. If you have any questions about, feel free to contact <a href="mailto:magstock@magfest.org?Subject=I%20would%20like%20to%20volunteer%20for%20MAGStock" target="#">magstock@magstock.org</a>.</p>
-        <input id="signupinput"/>
       </div>
       <div id="return">Press 'space' or click <a href="#menu" id="signup_return">here</a> to return to the main menu</div>
     </div>

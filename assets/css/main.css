@@ -155,6 +155,9 @@ input{
     width: auto\9; /* ie8 */
     padding-bottom: 15px;
 }
+#signup{
+  font-size: 1vw;
+}
 
 #return{
   font-size: x-small;
