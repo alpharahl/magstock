@@ -1,68 +1,67 @@
 var cur_menu = 'landing';
 $(function() {
    $('#about_link').click(function() {
-       showAbout();
-       return false;
-   });
-});
+     showAbout();
+   })
+})
+$(function(){
+  $('#events_link').click(function(){
+    showEvent();
+  })
+})
+$(function(){
+  $('#music_link').click(function(){
+    showMusic();
+  })
+})
 $(function(){
  $('#menu_link').click(function(){
    showMenu();
-   return false;
  })
 })
 $(function(){
  $('#directions_return').click(function(){
    showMenu();
-   return false;
  })
 })
 $(function(){
  $('#bring_return').click(function(){
    showMenu();
-   return false;
  })
 })
 $(function(){
  $('#signup_return').click(function(){
    showMenu();
-   return false;
  })
 })
 $(function(){
  $('#events_return').click(function(){
    showMenu();
-   return false;
  })
 })
 $(function(){
  $('#music_return').click(function(){
    showMenu();
-   return false;
  })
 })
 $(function(){
  $('#directions_link').click(function(){
    showDirections();
-   return false;
  })
 })
 $(function(){
  $('#bring_link').click(function(){
    showWhatToBring();
-   return false;
  })
 })
 $(function(){
  $('#volunteer_link').click(function(){
    showSignUp();
-   return false;
  })
 })
 $(function(){
    $('#landing_link').click(function(){
      showMenu();
-     return false;
    })
  })
 
@@ -87,6 +86,16 @@ $(function(){
    $('#menu').hide();
    $('#aboutselection').html('');
    cur_menu = 'about_menu';
+ }
+ function showEvent(){
+   $('#about').hide();
+   $('#events').show();
+   cur_menu = 'return';
+ }
+ function showMusic(){
+   $('#about').hide();
+   $('#music').show();
+   cur_menu = 'return';
  }
  function showDirections(){
    $('#directions').show();
@@ -120,14 +129,10 @@ $(function(){
          if (e.key == "Enter"){
            switch($('#aboutselection').html()){
              case '1':
-               $('#about').hide();
-               $('#events').show();
-               cur_menu = 'return'
+               showEvent();
                break;
              case '2':
-               $('#about').hide();
-               $('#music').show();
-               cur_menu = 'return'
+               showMusic();
                break;
              case '3':
                showMenu();
