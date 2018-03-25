@@ -167,10 +167,15 @@ input{
   text-align: left;
   padding-left: 20%;
 }
+#whattobring .innermenu{
+  text-aling: left;
+  padding-left: 10%;
+}
 .innermenu ol,ul{
   padding-top: 20px;
   padding-left: 10%;
 }
+
 .innermenu a{
   color: white;
 }
