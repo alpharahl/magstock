@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="shortcut icon" type="image/x-icon" href="images/mag_icon.png"/>
+
     <!-- SupportBee -->
-    <script>
+
+    <!-- <script>
       //<![CDATA[
       var sbhost = (("https:" == document.location.protocol) ? "https://" : "http://");
       document.write(unescape("%3Cscript src='" + sbhost +"d3932137p5ikt7.cloudfront.net/widget_v3/loader.min.js' type='text/javascript'%3E%3C/script%3E"));//]]>
@@ -23,7 +25,8 @@
         subject: '[MAGStock Contact] YOUR SUBJECT HERE',
         forwarding_address_id: '10012'
       });
-    </script>
+    </script> -->
+
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -34,10 +37,16 @@
     <script src="assets/js/main.js"></script>
   </head>
   <body id="body_div">
-
     <div class="landing" id="landing_page">
-      <img src="images/magstock8.jpg">
-      <p>Press 'enter' or click <a href="#menu" id="landing_link">here</a> to continue.</p>
+      <div class="background_image">
+        <svg width="100%" height="100%">
+          <rect x="4%" y="4%" width="92vw" height="92vh" stroke="black" fill="transparent" stroke-width="5"/>
+          <rect x="2.5%" y="2.5%" width="95vw" height="95vh" stroke="black" fill="transparent" stroke-width="1"/>
+        </svg>
+      </div>
+      <img src="images/magstock8.png">
+
+      <div class="container"><p>Click <a href="#menu" id="landing_link">here</a> to continue if not automatically redirected.</p></div>
     </div>
 
     <div class="header" id="header_box">
@@ -61,17 +70,19 @@
     </div>
 
     <div id="about">
-      <!-- <img src="images/magstock8.jpg"/> -->
-      <p>MAGStock is a 4-day outdoor festival celebrating camping, video games, and video game music.</p>
-      <div class="innermenu">
-          You may:
-        <ol>
-          <li><a href="#events" id="events_link">Learn about events</a></li>
-          <li><a href="#music" id="music_link">Learn about music</a></li>
-          <li><a href="#menu" id="menu_link">Return to the main menu</a></li>
-        </ol>
-        What is your choice?
-        <span id="aboutselection"></span><span class="blinking-cursor">_</span>
+      <div class="container">
+        <!-- <img src="images/magstock8.jpg"/> -->
+        <p>MAGStock is a 4-day outdoor festival celebrating camping, video games, and video game music.</p>
+        <div class="innermenu">
+            You may:
+          <ol>
+            <li><a href="#events" id="events_link">Learn about events</a></li>
+            <li><a href="#music" id="music_link">Learn about music</a></li>
+            <li><a href="#menu" id="menu_link">Return to the main menu</a></li>
+          </ol>
+          What is your choice?
+          <span id="aboutselection"></span><span class="blinking-cursor">_</span>
+        </div>
       </div>
     </div>
 
@@ -152,10 +163,52 @@
     <div id="signup">
       <div class="container">
         <p class="subtitle">Volunteer</p>
-        <p>Volunteering for MAGStock is both fun and easy! Our events are built on volunteer participation, so we encourage every attendee to get involved. Volunteer for enough hours and you'll even be rewarded! Click here for a list of volunteer openings and reward information.</p>
-        <p>All you need to do is check 'Sign me up!' when registering so we know you're interested. If you have any questions about volunteering, feel free to contact us at magstack@magstock.org.</p>
-      </div>
+        <p>Volunteering for MAGStock is both fun and easy! Our events are built on volunteer participation, so we encourage every attendee to get involved. Volunteer for enough hours and you'll even be rewarded!</p>
+        <div class="innermenu">
+          You may:
+          <ol>
+            <li><a href="#opportunities" id="opp_link">Learn about volunteer opportunities</a></li>
+            <li><a href="#rewards" id="rewards_link">Learn about volunteer rewards</a></li>
+            <li><a href="#menu" id="menu_link2">Return to the main menu</a></li>
+          </ol>
+          What is your choice?
+          <span id="volunteer_selection"></span><span class="blinking-cursor">_</span>
+        </div>
       <div id="return">Press 'space' or click <a href="#menu" id="signup_return">here</a> to return to the main menu</div>
+      </div>
+    </div>
+
+    <div id="rewards">
+      <div class="container">
+        <p class="subtitle">Rewards</p>
+        <div class="innermenu">
+          <ul>
+            <li>Working at least 8 hours gets you a MAGStock t-shirt</li>
+            <li>Working at least 18 hours gets you a complementary Staff badge for next year's MAGStock</li>
+            <li>Working at least 18 hours gets you a refund on your badge for this year</li>
+          </ul>
+        </div>
+        <p>Weighted Shifts are also available - each shift has a weight, as some shifts deserve more compensation than others. We multiply the number of hours in a shift by the weight of that shift when calculating how many hours you're signed up for. For example, if you sign up for a 4 hour shift with a weight of 1.5, then it counts as if you had worked 6 hours.</p>
+        <div id="return">Press 'space' or click <a href="#menu" id="rewards_return">here</a> to return to the main menu</div>
+      </div>
+    </div>
+
+    <div id="opportunities">
+      <div class="container">
+        <p class="subtitle">Opportunities</p>
+        <p> Please <a href="mailto:magstock@magstock.org">Contact us</a> if you can fill any of these roles:</p>
+        <p>These are some examples of the shifts that will be available during event. Information on sign up will be available soon.</p>
+        <div class="innermenu"><ul>
+          <li>Registration team leaders</li>
+          <li>Stage Managers & Stage Hands</li>
+          <li>Audio Engineers</li>
+          <li>Head Chef & Community Kitchen Volunteers</li>
+          <li>Artists and/or an Art Liaison</li>
+          <li>Swag Designer and/or Purchaser</li>
+        </ul></div>
+
+        <div id="return">Press 'space' or click <a href="#menu" id="opp_return">here</a> to return to the main menu</div>
+      </div>
     </div>
 
     <div class="footer" id="footer_box">

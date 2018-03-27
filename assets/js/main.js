@@ -20,6 +20,11 @@ $('#menu_link').click(function(){
 })
 })
 $(function(){
+$('#menu_link2').click(function(){
+ showMenu();
+})
+})
+$(function(){
 $('#directions_return').click(function(){
  showMenu();
 })
@@ -31,6 +36,16 @@ $('#bring_return').click(function(){
 })
 $(function(){
 $('#signup_return').click(function(){
+ showMenu();
+})
+})
+$(function(){
+$('#rewards_return').click(function(){
+ showMenu();
+})
+})
+$(function(){
+$('#opp_return').click(function(){
  showMenu();
 })
 })
@@ -64,6 +79,16 @@ $(function(){
    showMenu();
  })
 })
+$(function(){
+ $('#opp_link').click(function(){
+   showOpportunities();
+ })
+})
+$(function(){
+ $('#rewards_link').click(function(){
+   showRewards();
+ })
+})
 
 function showMenu(){
  $('#landing_page').fadeOut(750);
@@ -74,8 +99,11 @@ function showMenu(){
  $('#menu').show();
  $('#header_box').show();
  $('#footer_box').show();
+ $('#supportBee').show();
  $('#events').hide();
  $('#music').hide();
+ $('#rewards').hide();
+ $('#opportunities').hide();
  $('#menuselection').html('');
 
  cur_menu = 'main_menu';
@@ -110,7 +138,17 @@ function showWhatToBring(){
 function showSignUp(){
  $('#signup').show();
  $('#menu').hide();
- cur_menu = 'return';
+ cur_menu = 'volunteer_menu';
+}
+function showOpportunities(){
+  $('#signup').hide();
+  $('#opportunities').show();
+  cur_menu = 'return';
+}
+function showRewards(){
+  $('#signup').hide();
+  $('#rewards').show();
+  cur_menu = 'return';
 }
 
 window.onload = function(){
@@ -167,10 +205,29 @@ window.onload = function(){
          $('#menuselection').html(e.key);
        }
        break;
+     case 'volunteer_menu':
+       if (e.key == "Enter"){
+         switch($('#volunteer_selection').html()){
+           case '1':
+             showOpportunities();
+             cur_menu = 'return';
+             break;
+           case '2':
+             showRewards();
+             cur_menu = 'return';
+             break;
+           case '3':
+             showMenu();
+             break;
+         }
+       }else{
+         $('#volunteer_selection').html(e.key);
+       }
      case 'return':
        if (e.key == ' '){
          showMenu();
        }
    }
  })
+ setTimeout("showMenu()", 2000);
 }
