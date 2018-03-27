@@ -160,7 +160,7 @@ input{
 #menu{
   visibility: visible;
 }
-#about, #directions, #whattobring, #signup, #music, #events, #rewards, #opportunities{
+#about, #directions, .band, #whattobring, #signup, #music, #events, #rewards, #opportunities{
   /* visibility: hidden; */
   background-color: black;
   color: white;
@@ -179,6 +179,9 @@ input{
     width: auto\9; /* ie8 */
     padding-bottom: 15px;
     vertical-align: middle;
+}
+.band img{
+  width: 100%;
 }
 
 #return{
