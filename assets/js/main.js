@@ -102,6 +102,7 @@ function hideAll(){
   $('#rewards').hide();
   $('#opportunities').hide();
   $('#brentalfloss').hide();
+  $('#steel_samurai').hide();
 }
 
 function showMenu(){
@@ -160,6 +161,11 @@ function showBrentalfloss(){
   $('#brentalfloss').show();
   cur_menu = 'return';
 }
+function showSteelSamurai(){
+  hideAll();
+  $('#steel_samurai').show();
+  cur_menu = 'return';
+}
 
 
 $(window).hashchange(function(){
@@ -187,6 +193,9 @@ $(window).hashchange(function(){
       break;
     case '#brentalfloss':
       showBrentalfloss();
+      break;
+    case '#steel_samurai':
+      showSteelSamurai();
       break;
     case '#rewards':
       showRewards();
@@ -265,6 +274,9 @@ window.onload = function(){
          switch($('#music_selection').html()){
            case '1':
              window.location.hash = "#brentalfloss"
+             break;
+           case '2':
+             window.location.hash = "#steel_samurai"
              break;
          }
        }else{
