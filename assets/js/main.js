@@ -181,6 +181,12 @@ window.onload = function(){
             case '5':
               window.location.hash = "#signup"
               break;
+            case '6':
+              window.location.hash = "#faq"
+              break;
+            case '7':
+              window.location.hash = "#rules"
+              break;
             default:
               $('menuselection').html('')
           }
