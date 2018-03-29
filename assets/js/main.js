@@ -13,6 +13,8 @@ function hideAll(){
   $('#opportunities').hide();
   $('#brentalfloss').hide();
   $('#steel_samurai').hide();
+  $('#faq').hide()
+  $('#rules').hide()
 }
 
 function showMenu(){
@@ -76,6 +78,16 @@ function showSteelSamurai(){
   $('#steel_samurai').show();
   cur_menu = 'return';
 }
+function showFaq(){
+  hideAll();
+  $('#faq').show();
+  cur_menu = 'return';
+}
+function showRules(){
+  hideAll();
+  $('#rules').show();
+  cur_menu = 'return';
+}
 
 
 $(window).hashchange(function(){
@@ -113,12 +125,17 @@ $(window).hashchange(function(){
     case '#opportunities':
       showOpportunities();
       break;
+    case '#rules':
+      showRules();
+      break;
+    case '#faq':
+      showFaq();
+      break;
   }
 })
 
 
 window.onload = function(){
- // $(window).hashchange();
  var input = document.getElementById('body_div');
  $(document).keypress(function(e){
    switch(cur_menu){
@@ -131,15 +148,12 @@ window.onload = function(){
        if (e.key == "Enter"){
          switch($('#aboutselection').html()){
            case '1':
-             // showEvent();
              window.location.hash = "#events"
              break;
            case '2':
-             // showMusic();
              window.location.hash = "#music"
              break;
            case '3':
-             // showMenu();
              window.location.hash = "#menu"
              break;
            default:
@@ -153,23 +167,18 @@ window.onload = function(){
        if (e.key == "Enter"){
           switch($('#menuselection').html()){
             case '1':
-              // showAbout();
               window.location.hash = "#about"
-              // cur_menu = 'about_menu';
               break;
             case '2':
               window.location.replace("https://magstock8.uber.magfest.org/uber/preregistration/form");
               break;
             case '3':
-              // showDirections();
               window.location.hash = "#directions"
               break;
             case '4':
-              // showWhatToBring();
               window.location.hash = "#what_to_bring"
               break;
             case '5':
-              // showSignUp();
               window.location.hash = "#signup"
               break;
             default:
@@ -197,17 +206,12 @@ window.onload = function(){
        if (e.key == "Enter"){
          switch($('#volunteer_selection').html()){
            case '1':
-             // showOpportunities();
-             // cur_menu = 'return';
              window.location.hash = "#opportunities"
              break;
            case '2':
-             // showRewards();
-             // cur_menu = 'return';
              window.location.hash = "#rewards"
              break;
            case '3':
-             // showMenu();
              window.location.hash = "#menu"
              break;
          }
