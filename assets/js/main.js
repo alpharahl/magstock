@@ -15,6 +15,7 @@ function hideAll(){
   $('#steel_samurai').hide();
   $('#faq').hide()
   $('#rules').hide()
+  $('#tye_dye').hide()
 }
 
 function showMenu(){
@@ -36,6 +37,11 @@ function showAbout(){
 function showEvent(){
   hideAll();
   $('#events').show();
+  cur_menu = 'events_menu';
+}
+function showTyeDye(){
+  hideAll();
+  $('#tye_dye').show();
   cur_menu = 'return';
 }
 function showMusic(){
@@ -109,6 +115,9 @@ $(window).hashchange(function(){
       break;
     case '#events':
       showEvent();
+      break;
+    case '#tye_dye':
+      showTyeDye();
       break;
     case '#music':
       showMusic();
@@ -206,6 +215,23 @@ window.onload = function(){
          }
        }else{
          $('#music_selection').html(e.key);
+       }
+       break;
+     case 'events_menu':
+       if (e.key == "Enter"){
+         switch($('#event_selection').html()){
+           case '1':
+             window.location.hash = "#tye_dye"
+             break;
+           case '2':
+             window.location.hash = "#about"
+             break;
+           case '3':
+             window.location.hash = "#menu"
+             break;
+         }
+       }else{
+         $('#event_selection').html(e.key);
        }
        break;
      case 'volunteer_menu':
