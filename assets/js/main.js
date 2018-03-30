@@ -13,6 +13,7 @@ function hideAll(){
   $('#opportunities').hide();
   $('#brentalfloss').hide();
   $('#steel_samurai').hide();
+  $('#cowabunga').hide();
   $('#faq').hide()
   $('#rules').hide()
   $('#tye_dye').hide()
@@ -84,6 +85,11 @@ function showSteelSamurai(){
   $('#steel_samurai').show();
   cur_menu = 'return';
 }
+function showCowabunga(){
+  hideAll();
+  $('#cowabunga').show();
+  cur_menu = 'return';
+}
 function showFaq(){
   hideAll();
   $('#faq').show();
@@ -127,6 +133,9 @@ $(window).hashchange(function(){
       break;
     case '#steel_samurai':
       showSteelSamurai();
+      break;
+    case '#cowabunga':
+      showCowabunga();
       break;
     case '#rewards':
       showRewards();
@@ -211,6 +220,9 @@ window.onload = function(){
              break;
            case '2':
              window.location.hash = "#steel_samurai"
+             break;
+           case '3':
+             window.location.hash = "#cowabunga"
              break;
          }
        }else{
