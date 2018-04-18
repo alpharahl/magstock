@@ -310,13 +310,13 @@ window.onload = function(){
        if (e.key == "Enter"){
          switch($('#cowabunga_selection').html()){
            case '1':
-             window.location = "http://steelsamurai.com"
+             window.location = "https://cowabungapizzatime.bandcamp.com"
              break;
            case '2':
-             window.location = "https://www.facebook.com/steelsamuraiband/"
+             window.location = "https://www.facebook.com/cowabungapizzatime/"
              break;
            case '3':
-             window.location = "https://twitter.com/steelsamuraivgm"
+             window.location = "https://www.instagram.com/cowabungapizzatime/"
              break;
            case '4':
              playPauseAudio('cowabunga_music');
