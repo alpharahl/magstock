@@ -17,6 +17,9 @@ function hideAll(){
   $('#faq').hide()
   $('#rules').hide()
   $('#tye_dye').hide()
+  stopAudio('brentalfloss_music');
+  stopAudio('steel_samurai_music');
+  stopAudio('cowabunga_music');
 }
 
 function showMenu(){
@@ -27,7 +30,6 @@ function showMenu(){
   $('#menuselection').html('');
 
   cur_menu = 'main_menu';
-  // menuinput.focus();
 }
 function showAbout(){
   hideAll();
@@ -78,17 +80,20 @@ function showRewards(){
 function showBrentalfloss(){
   hideAll();
   $('#brentalfloss').show();
-  cur_menu = 'return';
+  $('#brentalfloss_music').hide();
+  cur_menu = 'brentalfloss';
 }
 function showSteelSamurai(){
   hideAll();
   $('#steel_samurai').show();
-  cur_menu = 'return';
+  $('#steel_samurai_music').hide();
+  cur_menu = 'steel_samurai';
 }
 function showCowabunga(){
   hideAll();
   $('#cowabunga').show();
-  cur_menu = 'return';
+  $('#cowabunga_music').hide();
+  cur_menu = 'cowabunga';
 }
 function showFaq(){
   hideAll();
@@ -99,6 +104,29 @@ function showRules(){
   hideAll();
   $('#rules').show();
   cur_menu = 'return';
+}
+
+function playPauseAudio(elementId){
+  if ($('#' + elementId + '_option').html() == "Play a sample"){
+    playAudio(elementId);
+  } else {
+    stopAudio(elementId);
+  }
+
+}
+
+function playAudio(elementId){
+  var a = document.getElementById(elementId);
+  $('#' + elementId).show();
+  $('#' + elementId + '_option').html("Pause sample");
+  a.volume = 0.1;
+  a.play();
+}
+function stopAudio(elementId){
+  var a = document.getElementById(elementId);
+  $('#' + elementId).hide();
+  $('#' + elementId + '_option').html("Play a sample");
+  a.pause();
 }
 
 
@@ -227,6 +255,78 @@ window.onload = function(){
          }
        }else{
          $('#music_selection').html(e.key);
+       }
+       break;
+     case 'brentalfloss':
+       if (e.key == "Enter"){
+         switch($('#brentalfloss_selection').html()){
+           case '1':
+             window.location = "https://brentalfloss.com"
+             break;
+           case '2':
+             window.location = "https://www.facebook.com/brentalfloss-126828580671866/"
+             break;
+           case '3':
+             window.location = "https://twitter.com/brentalfloss"
+             break;
+           case '4':
+             playPauseAudio('brentalfloss_music');
+             break;
+           case '5':
+             window.location = "#menu"
+             break;
+         }
+       } else {
+         $('#brentalfloss_selection').html(e.key);
+       }
+       break;
+       case 'steel_samurai':
+         if (e.key == "Enter"){
+           switch($('#steel_samurai_selection').html()){
+             case '1':
+               window.location = "http://steelsamurai.com"
+               break;
+             case '2':
+               window.location = "https://www.facebook.com/steelsamuraiband/"
+               break;
+             case '3':
+               window.location = "https://twitter.com/steelsamuraivgm"
+               break;
+             case '4':
+               window.location = "https://www.instagram.com/steelsamuraiband/"
+               break;
+             case '5':
+               playPauseAudio('steel_samurai_music');
+               break;
+             case '5':
+               window.location = "#menu"
+               break;
+           }
+         } else {
+           $('#steel_samurai_selection').html(e.key);
+         }
+         break;
+     case 'cowabunga':
+       if (e.key == "Enter"){
+         switch($('#cowabunga_selection').html()){
+           case '1':
+             window.location = "http://steelsamurai.com"
+             break;
+           case '2':
+             window.location = "https://www.facebook.com/steelsamuraiband/"
+             break;
+           case '3':
+             window.location = "https://twitter.com/steelsamuraivgm"
+             break;
+           case '4':
+             playPauseAudio('cowabunga_music');
+             break;
+           case '5':
+             window.location = "#menu"
+             break;
+         }
+       } else {
+         $('#cowabunga_selection').html(e.key);
        }
        break;
      case 'events_menu':
