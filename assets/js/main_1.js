@@ -181,7 +181,18 @@ $(window).hashchange(function(){
 })
 
 
+
+
 window.onload = function(){
+  $("#brentalfloss_music_option").on("click", function(){
+    playPauseAudio('brentalfloss_music');
+  })
+  $("#steel_samurai_music_option").on("click", function(){
+    playPauseAudio('steel_samurai_music');
+  })
+  $("#cowabunga_music_option").on("click", function(){
+    playPauseAudio('cowabunga_music');
+  })
  var input = document.getElementById('body_div');
  $(document).keypress(function(e){
    switch(cur_menu){
