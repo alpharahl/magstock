@@ -211,6 +211,12 @@ window.onload = function(){
              window.location.hash = "#music"
              break;
            case '3':
+             window.location.hash = "#directions"
+             break;
+           case '4':
+             window.location.hash = "#what_to_bring"
+             break;
+           case '5':
              window.location.hash = "#menu"
              break;
            default:
@@ -230,18 +236,12 @@ window.onload = function(){
               window.location.replace("https://magstock8.uber.magfest.org/uber/preregistration/form");
               break;
             case '3':
-              window.location.hash = "#directions"
-              break;
-            case '4':
-              window.location.hash = "#what_to_bring"
-              break;
-            case '5':
               window.location.hash = "#signup"
               break;
-            case '6':
+            case '4':
               window.location.hash = "#faq"
               break;
-            case '7':
+            case '5':
               window.location.hash = "#rules"
               break;
             default:
